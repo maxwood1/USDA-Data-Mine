@@ -7,6 +7,7 @@ if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
 lapply(packages, require, character.only = TRUE)#load the needed packages
 
 
+#change this to your working directory
 setwd("C:/Users/maxwo/OneDrive/Desktop/STAT598/WV")
 
 #download the plot, cond, tree, and pop_plot_stratum_eval files for your state of interest from the FIA datamart. https://apps.fs.usda.gov/fia/datamart/CSV/datamart_csv.html
@@ -28,7 +29,6 @@ filelist = c("plot", "POP_PLOT_STRATUM_ASSGN", "POP_EVAL")
 options(timeout=200)
 for (i in filelist){
   assign(i,read.csv(paste("http://apps.fs.usda.gov/fia/datamart/CSV/", state, "_", i,".csv", sep="")))
-  
 }
 
 # #if it crashes, like for the state AS (American Samoa), try
@@ -55,6 +55,7 @@ names(plot_joined) #check what fields lon and lat are in.
 plot_joined.SP  <- SpatialPointsDataFrame(plot_joined[,c(38,37)],plot_joined[,-c(38,37)],proj4string=p4stringFIA) #assuming field 38 is lon and 37 is lat
 
 
+#only run this once to download census data
 download.file(paste("https://www2.census.gov/geo/tiger/TIGER_DP/2017ACS/ACS_2017_5YR_TRACT_",stateFIPS,".gdb.zip",sep=""),dlGDB,method="libcurl",mode="wb")
 unzip(dlGDB)
 
@@ -66,17 +67,18 @@ all_layers = st_layers(uzdlGDB)$name
 
 #edited this to read all census layers
 fcData <- as.data.frame(st_read(uzdlGDB, layer=layers[1]))
-for(i in length(layers)-1) {
+for(i in 1:(length(layers)-1)) {
   temp <- as.data.frame(st_read(uzdlGDB, layer=layers[i+1], quiet=T))
   fcData <- merge(fcData, temp)
 }
 
 
 full_names = as.data.frame(st_read(uzdlGDB, layer = all_layers[length(all_layers)-1]))
-for (ind in 2:length(colnames(fcData))){
-  sht_name = colnames(fcData)[ind]
-  colnames(fcData)[ind] = full_names[full_names$Short_Name==sht_name,]$Full_Name
-}
+#don't need this
+#for (ind in 2:length(colnames(fcData))){
+  #sht_name = colnames(fcData)[ind]
+  #colnames(fcData)[ind] = full_names[full_names$Short_Name==sht_name,]$Full_Name
+#}
 
 plot_joined.SP@data$GEOID = sp::over(plot_joined.SP, fcFeat[,"GEOID_Data"]) #now I have the GEOID attached to my plots, and I can join it to the values in fcData via the GEOID_Data field!
 
@@ -91,6 +93,34 @@ tract_filt = subset(tract_filt, plots>0)
 tracts <- fortify(tract_filt, region ="GEOID_Data")
 tracts = left_join(tracts,tract_filt@data, by=c('id'='GEOID_Data'))
 tracts = mutate(tracts,pct_denied=denied/plots)
+
+tract_data = left_join(tract_filt@data, fcData, by=c('GEOID_Data'='GEOID'))
+
+
+#plot data with y=percentage denied and x=chosen variable
+
+#data currently split by county and tract independently
+#View(tract_data[c(65,302),1:20])
+
+#merge by unique tract
+test <- tract_data %>% group_by(NAMELSAD) %>% 
+  summarize(pct_denied=sum(denied)/sum(plots), total_pop=sum(B01001e1), pct_males=sum(B01001e2)/total_pop, 
+            pct_females=sum(B01001e26)/total_pop, num_houses=sum(B25013e1), total_area=sum(ALAND))
+
+#Percentage of males
+plot(test$pct_males, test$pct_denied)
+
+#Percentage of females
+plot(test$pct_females, test$pct_denied)
+
+#Population density: Total population divided by total land area for scale
+#aland and awater are in sq meters
+area_sqkm = test$total_area / 1e6
+density = test$total_pop / area_sqkm
+plot(log(density), test$pct_denied, main=paste("Percentage of Denied Access vs Population Density Per Tract in", stateNAME),
+     ylab="Percentage Denied")
+
+
 
 plot_joined$PLOT_NONSAMPLE_REASN_CD[is.na(plot_joined$PLOT_NONSAMPLE_REASN_CD)] = 1
 
@@ -107,8 +137,6 @@ ggmap(map) +
   
 
 ggsave("ggPlots_RI.png",dpi = 1000)
-
-tract_data = left_join(tract_filt@data, fcData, by=c('GEOID_Data'='GEOID'))
 
 ggplot()
 
