@@ -86,7 +86,8 @@ plotCensus=tidyft::left_join(plot_joined.SP@data,fcData,by="GEOID")
 
 mapdata <- data.frame(plot_joined.SP)
 
-plt_ct = summarize(group_by(plotCensus,GEOID), plots=n(), denied=sum(PLOT_NONSAMPLE_REASN_CD==2,na.rm=TRUE))
+#experiment with removing the remotely sensed plots - no chance of being denied access
+plt_ct = summarize(group_by(plotCensus,GEOID), plots=sum(SAMP_METHOD_CD != 2), denied=sum(PLOT_NONSAMPLE_REASN_CD==2,na.rm=TRUE))
 tract_filt = fcFeat
 tract_filt@data = left_join(tract_filt@data,plt_ct, by=c('GEOID_Data'='GEOID'))
 tract_filt = subset(tract_filt, plots>0)
@@ -104,8 +105,15 @@ tract_data = left_join(tract_filt@data, fcData, by=c('GEOID_Data'='GEOID'))
 
 #merge by unique tract
 test <- tract_data %>% group_by(NAMELSAD) %>% 
-  summarize(pct_denied=sum(denied)/sum(plots), total_pop=sum(B01001e1), pct_males=sum(B01001e2)/total_pop, 
-            pct_females=sum(B01001e26)/total_pop, num_houses=sum(B25013e1), total_area=sum(ALAND))
+  summarize(num_plots=sum(plots), num_denied=sum(denied), pct_denied=sum(denied)/sum(plots), 
+            total_pop=sum(B01001e1), pct_males=sum(B01001e2)/total_pop, pct_females=sum(B01001e26)/total_pop, 
+            num_houses=sum(B25013e1), total_area=sum(ALAND), income=mean(B19001e1), age=mean(B01002e1),
+            pct_unemployed=sum(B23025e5)/sum(B23025e1),
+            pct_overhighschool=sum(B15003e19,B15003e20,B15003e21,B15003e22,B15003e23,B15003e24,B15003e25,
+                                   B15003e3)/sum(B15003e1),
+            pct_over65=sum(B01001e20,B01001e21,B01001e22,B01001e22,B01001e23,B01001e24,B01001e25,B01001e44,
+                           B01001e45,B01001e46,B01001e47,B01001e48,B01001e49)/total_pop)
+
 
 #Percentage of males
 plot(test$pct_males, test$pct_denied)
@@ -120,7 +128,51 @@ density = test$total_pop / area_sqkm
 plot(log(density), test$pct_denied, main=paste("Percentage of Denied Access vs Population Density Per Tract in", stateNAME),
      ylab="Percentage Denied")
 
+#Logistic regression for percentage response
+#cbind(successes, failures)
+densitylogit <- glm(cbind(num_denied,num_plots-num_denied) ~ density, data=test, family="binomial")
+summary(densitylogit)
 
+#double checking logit
+densitylogit1 <- glm(pct_denied ~ density, data=test, family="binomial", weight=num_plots)
+summary(densitylogit1)
+
+
+#Average Household Income per tract
+plot(test$income, test$pct_denied)
+
+incomelogit <- glm(cbind(num_denied,num_plots-num_denied) ~ income, data=test, family="binomial")
+summary(incomelogit)
+
+q <- quantile(test$income)
+test <- test %>% mutate(income_bin=case_when(income < q[2] ~ 1,
+                                             income >= q[2] & income < q[3] ~ 2,
+                                             income >= q[3] & income < q[4] ~ 3,
+                                             income >= q[4] ~ 4))
+
+plot(test$income_bin, test$pct_denied)
+
+#Average Age
+plot(test$age, test$pct_denied)
+agelogit <- glm(cbind(num_denied,num_plots-num_denied) ~ age, data=test, family="binomial")
+summary(agelogit)
+
+#Percent Unemployed 16 and older
+unemployedlogit <- glm(cbind(num_denied,num_plots-num_denied) ~ pct_unemployed, data=test, family="binomial")
+summary(unemployedlogit)
+
+#Education - Percentage of Pop 25 years or older with more than high school / GED
+overhighlogit <- glm(cbind(num_denied,num_plots-num_denied) ~ pct_overhighschool, data=test, family="binomial")
+summary(overhighlogit)
+
+#Percentage of Pop 65 years old and older
+over65logit <- glm(cbind(num_denied,num_plots-num_denied) ~ pct_over65, data=test, family="binomial")
+summary(over65logit)
+
+#test full model
+full_logit <- glm(cbind(num_denied,num_plots-num_denied) ~ density+income+age+pct_overhighschool+pct_over65, data=test, family="binomial")
+summary(full_logit)
+                               
 
 plot_joined$PLOT_NONSAMPLE_REASN_CD[is.na(plot_joined$PLOT_NONSAMPLE_REASN_CD)] = 1
 
