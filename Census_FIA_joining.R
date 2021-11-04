@@ -107,12 +107,15 @@ tract_data = left_join(tract_filt@data, fcData, by=c('GEOID_Data'='GEOID'))
 test <- tract_data %>% group_by(NAMELSAD) %>% 
   summarize(num_plots=sum(plots), num_denied=sum(denied), pct_denied=sum(denied)/sum(plots), 
             total_pop=sum(B01001e1), pct_males=sum(B01001e2)/total_pop, pct_females=sum(B01001e26)/total_pop, 
-            num_houses=sum(B25013e1), total_area=sum(ALAND), income=mean(B19001e1), age=mean(B01002e1),
+            num_houses=sum(B25013e1), total_area=sum(ALAND), age=mean(B01002e1),
             pct_unemployed=sum(B23025e5)/sum(B23025e1),
             pct_overhighschool=sum(B15003e19,B15003e20,B15003e21,B15003e22,B15003e23,B15003e24,B15003e25,
                                    B15003e3)/sum(B15003e1),
             pct_over65=sum(B01001e20,B01001e21,B01001e22,B01001e22,B01001e23,B01001e24,B01001e25,B01001e44,
-                           B01001e45,B01001e46,B01001e47,B01001e48,B01001e49)/total_pop)
+                           B01001e45,B01001e46,B01001e47,B01001e48,B01001e49)/total_pop,
+            pct_incomeover100=sum(B19001e14,B19001e15,B19001e16,B19001e17)/num_houses,
+            pct_incomeunder20=sum(B19001e2,B19001e3,B19001e4)/num_houses)
+
 
 
 #Percentage of males
@@ -120,6 +123,10 @@ plot(test$pct_males, test$pct_denied)
 
 #Percentage of females
 plot(test$pct_females, test$pct_denied)
+
+#Number of houses
+houselogit <- glm(cbind(num_denied,num_plots-num_denied) ~ num_houses, data=test, family="binomial")
+summary(houselogit)
 
 #Population density: Total population divided by total land area for scale
 #aland and awater are in sq meters
@@ -138,21 +145,27 @@ densitylogit1 <- glm(pct_denied ~ density, data=test, family="binomial", weight=
 summary(densitylogit1)
 
 
-#Average Household Income per tract
-plot(test$income, test$pct_denied)
+#Percentage of households with over 100k income
+plot(test$pct_incomeover100, test$pct_denied)
 
-incomelogit <- glm(cbind(num_denied,num_plots-num_denied) ~ income, data=test, family="binomial")
-summary(incomelogit)
+highincomelogit <- glm(cbind(num_denied,num_plots-num_denied) ~ pct_incomeover100, data=test, family="binomial")
+summary(highincomelogit)
 
-q <- quantile(test$income)
-test <- test %>% mutate(income_bin=case_when(income < q[2] ~ 1,
-                                             income >= q[2] & income < q[3] ~ 2,
-                                             income >= q[3] & income < q[4] ~ 3,
-                                             income >= q[4] ~ 4))
+#Percentage of households with under 20k income
+plot(test$pct_incomeunder20, test$pct_denied)
+
+lowincomelogit <- glm(cbind(num_denied,num_plots-num_denied) ~ pct_incomeunder20, data=test, family="binomial")
+summary(lowincomelogit)
+
+q <- quantile(test$pct_incomeunder20)
+test <- test %>% mutate(income_bin=case_when(pct_incomeunder20 < q[2] ~ 1,
+                                             pct_incomeunder20 >= q[2] & pct_incomeunder20 < q[3] ~ 2,
+                                             pct_incomeunder20 >= q[3] & pct_incomeunder20 < q[4] ~ 3,
+                                             pct_incomeunder20 >= q[4] ~ 4))
 
 plot(test$income_bin, test$pct_denied)
 
-#Average Age
+#Median Age
 plot(test$age, test$pct_denied)
 agelogit <- glm(cbind(num_denied,num_plots-num_denied) ~ age, data=test, family="binomial")
 summary(agelogit)
@@ -170,7 +183,7 @@ over65logit <- glm(cbind(num_denied,num_plots-num_denied) ~ pct_over65, data=tes
 summary(over65logit)
 
 #test full model
-full_logit <- glm(cbind(num_denied,num_plots-num_denied) ~ density+income+age+pct_overhighschool+pct_over65, data=test, family="binomial")
+full_logit <- glm(cbind(num_denied,num_plots-num_denied) ~ num_houses+density+age+pct_overhighschool, data=test, family="binomial")
 summary(full_logit)
                                
 
