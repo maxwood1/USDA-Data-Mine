@@ -2,3 +2,16 @@
 SEX BY AGE: Female: Total population -- (Estimate),B01001e26
 SEX BY AGE: Male: Total population -- (Estimate),B01001e2
 SEX BY AGE: Total: Total population -- (Estimate),B01001e1
+FAMILY INCOME IN THE PAST 12 MONTHS (IN 2017 INFLATION-ADJUSTED DOLLARS): Total: Families -- (Estimate),B19101e1
+HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2017 INFLATION-ADJUSTED DOLLARS): Total: Households -- (Estimate),B19001e1
+NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2017 INFLATION-ADJUSTED DOLLARS): Total: Nonfamily households -- (Estimate),B19201e1
+RACE: American Indian and Alaska Native alone: Total population -- (Estimate),B02001e4
+RACE: Asian alone: Total population -- (Estimate),B02001e5
+RACE: Black or African American alone: Total population -- (Estimate),B02001e3
+RACE: Native Hawaiian and Other Pacific Islander alone: Total population -- (Estimate),B02001e6
+RACE: Some other race alone: Total population -- (Estimate),B02001e7
+RACE: Total: Total population -- (Estimate),B02001e1
+RACE: Two or more races: Total population -- (Estimate),B02001e8
+"RACE: Two or more races: Two races excluding Some other race, and three or more races: Total population -- (Estimate)",B02001e10
+RACE: Two or more races: Two races including Some other race: Total population -- (Estimate),B02001e9
+RACE: White alone: Total population -- (Estimate),B02001e2
