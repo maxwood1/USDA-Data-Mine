@@ -1,6 +1,6 @@
-#Data for Google Earth Engine
+#Data for Google Earth Engine and Graphs
 
-packages <- c("RJSONIO","rgdal","tidycensus", "sf","geojsonio", "sqldf", "tidyft",'dplyr','stringr') #make a list of needed packages
+packages <- c("RJSONIO","rgdal","tidycensus","sf","geojsonio","sqldf","tidyft",'dplyr','stringr') #make a list of needed packages
 
 #Install any needed packages
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
@@ -16,9 +16,6 @@ state = "UT" #choose state code of interest
 data(fips_codes)
 (stateFIPS = fips_codes[fips_codes$state ==state,2][1])
 (stateNAME=sub(" ", "_",toupper(fips_codes[fips_codes$state ==state,3][1])))
-#featNAME = paste("ACS_2017_5YR_TRACT_",stateFIPS,"_",stateNAME,sep="")
-#dlGDB=paste("ACS_2017_5YR_TRACT_",stateFIPS,".gdb.zip",sep="")
-#(uzdlGDB = paste("ACS_2017_5YR_TRACT_",stateFIPS,"_",stateNAME,".gdb",sep=""))
 
 
 ## Get FIA data
@@ -51,7 +48,7 @@ gee_data <- plot_joined %>% select(PLT_CN,LAT,LON,PLOT_NONSAMPLE_REASN_CD)
 #write.csv(gee_data, paste(state,"_gee_data.csv",sep=""),row.names=FALSE)
 
 
-#do GEE stuff here to attach FIA plots to geo layer
+## do GEE stuff now to attach FIA plots to geo layer
 
 
 ## After GEE
@@ -80,9 +77,11 @@ for(i in 1:length(plot_gee$PLOT_NONSAMPLE_REASN_CD)) {
 
 plot_gee$nonresponse <- as.factor(plot_gee$nonresponse)
 
+
 #get state name with space
 stname <- sub("_"," ", stateNAME)
 stname <- str_to_title(stname)
+
 
 #Boxplot with canopy cover
 boxplot(plot_gee$canopy ~ plot_gee$nonresponse, main=paste("Nonresponse Status vs Percentage of Canopy Cover in",stname),
