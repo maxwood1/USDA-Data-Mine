@@ -1,0 +1,79 @@
+//The point of this script is to get the average percent tree cover in the 1 mile (1600 meter) 
+//radius circle around each plot in a csv file you imported. We are using the NLCD data 
+//(https://developers.google.com/earth-e...)
+//The NLCD landcover is used to mask out "water", i.e., ignore values around water
+// Import the NLCD collection.
+var dataset = ee.ImageCollection('USGS/NLCD_RELEASES/2016_REL');
+
+// The collection contains images for multiple years and regions in the USA.
+print('Products:', dataset.aggregate_array('system:index'));
+
+// Filter the collection to the 2016 product.
+var nlcd2016 = dataset.filter(ee.Filter.eq('system:index', '2016')).first();
+
+// Each product has multiple bands for describing aspects of land cover. //You will need to know the band name if you use a different layer.
+print('Bands:', nlcd2016.bandNames());
+
+// Select the land cover band.
+var pctTC = nlcd2016.select('percent_tree_cover');
+
+// Display land cover on the map.
+Map.setCenter(-95, 38, 5);
+Map.addLayer(pctTC, null, 'Canopy cover'); //adding the layer to look at it.
+
+var datamask = nlcd2016.select('landcover').gt(12) //Here I'm masking out water on the NLCD landcover map. This will cause the summary
+//functions to ignore water pixels, which you might not want in all cases -- just be careful here.
+var pctTCmask = pctTC.updateMask(datamask) //This converts the water pixels to masked, so in theory shouldn't use them in focal calculations.
+Map.addLayer(pctTCmask, null, 'pctTCmask'); //Adding the layer, just to look. 
+
+// Define a boxcar or low-pass kernel.
+var boxcar = ee.Kernel.circle({
+  radius: 1609, units: 'meters', normalize: true  //this is the 1 mile radius circle; you can change this..
+});
+
+// Smooth the image by convolving with the boxcar kernel. This is using the "window" (the kernel) and calculating the average within the window
+//so in our case, we're using a circle with a 1 mile radius, ignoring 0 values of canopy cover in NLCD water pixels.
+
+var smoothMask = pctTCmask.convolve(boxcar); //This is the layer I"m doing calculations on. If I choose not to use the water masking
+//*I need to either rename smoothMask below or simply call smoothMask the layer.
+Map.addLayer(smoothMask, null, 'smoothedMask');
+
+//This is a csv file that I imported (do this in the Assets tab, to left,  remembering to specify LON and LAT as the coordinates). You will need to change the name
+//of the points below from my name to your own name and path.
+//import csv manually on the left
+var pts = ee.FeatureCollection(table); //Remember after I import the csv, it takes awhile to become an Asset. 
+//In my example, I named it RI_plot_forGEE; that file has plot_cn, LON and LAT fields. This is the from the 900 (all lands) evaluation!
+Map.addLayer(pts, null, 'points');
+print('Bands:', smoothMask.bandNames()); //this prints the name of the band to get in the console
+
+var smoothIC = ee.ImageCollection(smoothMask)
+// function to map over the FeatureCollection
+var mapfunc = function(feat) {
+  // get feature geometry
+  var geom = feat.geometry()
+  // function to iterate over the ImageCollection; I only have 1 layer, but can do it for more.
+  // the initial object for the iteration is the feature
+  var addProp = function(img, f) {
+    // cast Feature
+    var newf = ee.Feature(f)
+    // get date as string
+    var date = img.date().format()
+    // extract the value in the feature
+    var value = img.reduceRegion(ee.Reducer.first(), geom, 30).get('percent_tree_cover')
+    // if the value is not null, set the values as a property of the feature. The name of the property will be the date
+    return ee.Feature(ee.Algorithms.If(value,
+                                       newf.set(date, ee.String(value)),
+                                       newf.set(date, ee.String('No data'))))
+  }
+  var newfeat = ee.Feature(smoothIC.iterate(addProp, feat))
+  return newfeat
+};
+
+//Now you need to go to tasks and run the export_Points task -- choose your google drive folder of interest. It will run
+//And put the csv file with the average percent canopy cover within 1 mile (ignoring water) on each plot.
+var newft = pts.map(mapfunc);
+// Export
+Export.table.toDrive(newft,
+"export_Points",
+"export_Points",
+"export_Points");
