@@ -17,6 +17,10 @@ The challenge FIA faces is that they are not able to physically visit every samp
 ## Motivation
 
 ![Plots Example](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png?raw=TRUE)
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png"
+     alt="Plots Example"
+     width=400px
+     height=auto />
 
 To answer this question, we first need to understand how FIA estimates are created. The traditional method that FIA uses assumes that the non-response plots have the same characteristics as all sampled plots, which contains both visited and remotely sensed. The issue with this assumption is that the remotely sensed plots have no chance of being non-response, since their values are obtained from satellite data. So, the Purdue method we are proposing assumes instead that non-response plots more closely resemble the visited plots.
 
