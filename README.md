@@ -16,7 +16,6 @@ The challenge FIA faces is that they are not able to physically visit every samp
   
 ## Motivation
 
-![Plots Example](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png?raw=TRUE)
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png"
      alt="Plots Example"
      width=400px
@@ -26,16 +25,24 @@ To answer this question, we first need to understand how FIA estimates are creat
 
 The reasoning for this can be seen in the two graphs listed below, which compare the distribution of canopy cover for the different plot types. The left graph compares the distribution of all sampled plots to non-response, and this tests the traditional method's assumption. While the right graph compares the distribution of visited plots to non-response, which tests the Purdue method's assumption. Both methods assume that the red and black lines in each graph are the same. In this case, the traditional method's assumption is likely incorrect since the lines are very different, while the Purdue method's assumption is likely met since the lines are close together. This empirically shows why the Purdue method may be better.
 
-![Purdue Method](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Purdue_method.png?raw=TRUE)
-
-![Traditional Method](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Traditional_method.png?raw=TRUE)
-
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Purdue_method.png"
+     alt="Purdue Method"
+     width=400px
+     height=auto />
+     
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Traditional_method.png"
+     alt="Traditional Method"
+     width=400px
+     height=auto />
 
 ## Stratification
 
 In the context of forest inventory, stratification is a statistical method used to improve estimates by taking advantage of information contained in maps to assign plots to homogeneous groups and provide weights to a weighted averaging procedure. In our example below, a canopy cover map in which each pixel is labeled for its percent tree canopy can be classified into 2 classes: forest and non-forest. Canopy cover percent between 0% to 20% are regarded as non-forest, Canopy cover percent between 20% to 100% are regarded as forest. FIA uses post stratification to improve the precision of estimates.
 
-![Stratification Example](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Stratification.png?raw=TRUE)
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Stratification.png"
+     alt="Stratification Example"
+     width=400px
+     height=auto />
 
 ## Conclusion 
 
