@@ -21,7 +21,7 @@ The reasoning for this can be seen in the two graphs listed below, which compare
 ## Stratification
 In the context of forest inventory, stratification is a statistical method used to improve estimates by taking advantage of information contained in maps to assign plots to homogeneous groups and provide weights to a weighted averaging procedure. In our example below, a canopy cover map in which each pixel is labeled for its percent tree canopy can be classified into 2 classes: forest and non-forest. Canopy cover percent between 0% to 20% are regarded as non-forest, Canopy cover percent between 20% to 100% are regarded as forest. FIA uses post stratification to improve the precision of estimates.
 
-![Stratification Example](maxwood1/USDA-Data-Mine/main/Images/Stratification.png)
+![Stratification Example](maxwood1/USDA-Data-Mine/Images/Stratification.png)
 
 ## Conclusion 
 The Purdue method of filling the non-response plots with only the mean value of the visited plots, is generally more accurate and produces less bias than the traditional method. That being said, the traditional method gives better estimations for a small subset of factor combinations, but has much higher error when both the proportions of remotely sensed plots and non-response plots are high. 
