@@ -5,7 +5,7 @@ output: html_document
 
 # Readme/Report of the USDA FIA Purdue DataMine project of 2021-2022
 
-## Background:
+## Background
 
 The USDA’s Forest Service's Forest Inventory and Analysis branch (FIA) is responsible for collecting, analyzing, and reporting information about America’s forests to allow others to make “science based decisions, backed by forest data”. Field crew workers are sent to randomly sampled plots throughout the Nation, to collect a variety of core measurements, which are used to obtain overall measurements of the Nation’s forests. 
 
@@ -43,6 +43,15 @@ The reasoning for this can be seen in the two graphs listed below, which compare
 In the context of forest inventory, stratification is a statistical method used to improve estimates by taking advantage of information contained in maps to assign plots to homogeneous groups and provide weights to a weighted averaging procedure. In our example below, a canopy cover map in which each pixel is labeled for its percent tree canopy can be classified into 2 classes: forest and non-forest. Canopy cover percent between 0% to 20% are regarded as non-forest, Canopy cover percent between 20% to 100% are regarded as forest. FIA uses post stratification to improve the precision of estimates.
 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Stratification.png"
+     alt="Stratification Example"
+     width=75%
+     height=auto />
+     
+## Simulation
+
+We simulated plot populations with different proportions of visited, non-response, and remotely sensed plots. We calculated mean canopy cover values for each of two nonresponse mitigation methods (top row: Purdue method; second row: Traditional FIA  method) with these simulated populations, varying stratification threshold (columns), proportion of plots that are remotely sensed (x axis) and nonresponse rate (y axis). We also compared the errors between the two estimation methods (bottom row). The error comparison (bottom row) shows where the Purdue method outperforms the traditional method (the blue regions), and where the traditional method performs better (the red regions). 
+
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Screen%20Shot%202022-04-12%20at%202.25.02%20PM.png"
      alt="Stratification Example"
      width=75%
      height=auto />
