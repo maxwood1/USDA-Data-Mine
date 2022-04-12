@@ -4,7 +4,9 @@ output: html_document
 ---
 
 # Readme/Report of the USDA FIA Purdue DataMine project of 2021-2022
+
 ## Background:
+
 The USDA’s Forest Service's Forest Inventory and Analysis branch (FIA) is responsible for collecting, analyzing, and reporting information about America’s forests to allow others to make “science based decisions, backed by forest data”. Field crew workers are sent to randomly sampled plots throughout the Nation, to collect a variety of core measurements, which are used to obtain overall measurements of the Nation’s forests. 
 
 In order to obtain the measurements, FIA divides their plots into various categories. **Visited Plots** are sampled plots, field crew members are able to physically access and obtain actual measurements from. **Remotely Sensed Plots** are plots where a human interpreter of high-resolution imagery determines if the plot is a “non-forest” plot based on the percentage of canopy cover. If canopy cover is less than 10%, the plot is labeled as “sampled'', however, field crew members do not physically visit the plot. Instead,satellite imagery enables FIA to collect some information on the plot such as land cover and use.  
@@ -14,20 +16,39 @@ The challenge FIA faces is that they are not able to physically visit every samp
   
 ## Motivation
 
+![Plots Example](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png?raw=TRUE)
+
 To answer this question, we first need to understand how FIA estimates are created. The traditional method that FIA uses assumes that the non-response plots have the same characteristics as all sampled plots, which contains both visited and remotely sensed. The issue with this assumption is that the remotely sensed plots have no chance of being non-response, since their values are obtained from satellite data. So, the Purdue method we are proposing assumes instead that non-response plots more closely resemble the visited plots.
 
 The reasoning for this can be seen in the two graphs listed below, which compare the distribution of canopy cover for the different plot types. The left graph compares the distribution of all sampled plots to non-response, and this tests the traditional method's assumption. While the right graph compares the distribution of visited plots to non-response, which tests the Purdue method's assumption. Both methods assume that the red and black lines in each graph are the same. In this case, the traditional method's assumption is likely incorrect since the lines are very different, while the Purdue method's assumption is likely met since the lines are close together. This empirically shows why the Purdue method may be better.
 
+![Purdue Method](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Purdue_method.png?raw=TRUE)
+
+![Traditional Method](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Traditional_method.png?raw=TRUE)
+
+
 ## Stratification
+
 In the context of forest inventory, stratification is a statistical method used to improve estimates by taking advantage of information contained in maps to assign plots to homogeneous groups and provide weights to a weighted averaging procedure. In our example below, a canopy cover map in which each pixel is labeled for its percent tree canopy can be classified into 2 classes: forest and non-forest. Canopy cover percent between 0% to 20% are regarded as non-forest, Canopy cover percent between 20% to 100% are regarded as forest. FIA uses post stratification to improve the precision of estimates.
 
-![Stratification Example](maxwood1/USDA-Data-Mine/Images/Stratification.png)
+![Stratification Example](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Stratification.png?raw=TRUE)
 
 ## Conclusion 
+
 The Purdue method of filling the non-response plots with only the mean value of the visited plots, is generally more accurate and produces less bias than the traditional method. That being said, the traditional method gives better estimations for a small subset of factor combinations, but has much higher error when both the proportions of remotely sensed plots and non-response plots are high. 
 
 ## Future Works 
-The analysis we performed, dealt with instances where the entire plot was labeled non-response. An extension to this could analyze instances where only part of the plots are non-response. Additionally, we focused on Indiana for our analysis, but it would be beneficial to look at other states or on a more cohesive level. Lastly, for our simulation, we stratified by canopy cover percentage values; it would be useful to stratify based on other variables, as canopy cover acts slightly different than most, with is being a relative frequency, instead of a counting variable.   
+
+The analysis we performed, dealt with instances where the entire plot was labeled non-response. An extension to this could analyze instances where only part of the plots are non-response. Additionally, we focused on Indiana for our analysis, but it would be beneficial to look at other states or on a more cohesive level. Lastly, for our simulation, we stratified by canopy cover percentage values; it would be useful to stratify based on other variables, as canopy cover acts slightly different than most, with is being a relative frequency, instead of a counting variable. 
+
+## Acknowledgments   
+
+**Corporate Partner Mentors:** Andrew Lister and Gretchen Moisen
+**USDA Contributor:** Rachel Riemann
+**Contributor Speaker:** Kelly McConville  
+**Corporate Partner TA:** Patrick Todjalla 
+**DataMine Staff:** Shuennhow Chang 
+
 
 ## List of files in the github
 
