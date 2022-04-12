@@ -58,9 +58,13 @@ The analysis we performed, dealt with instances where the entire plot was labele
 ## Acknowledgments   
 
 **Corporate Partner Mentors:** Andrew Lister and Gretchen Moisen
+
 **USDA Contributor:** Rachel Riemann
-**Contributor Speaker:** Kelly McConville  
-**Corporate Partner TA:** Patrick Todjalla 
+
+**Contributor Speaker:** Kelly McConville
+
+**Corporate Partner TA:** Patrick Todjalla
+
 **DataMine Staff:** Shuennhow Chang 
 
 
