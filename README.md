@@ -66,34 +66,34 @@ The analysis we performed, dealt with instances where the entire plot was labele
 
 ## List of files in the github
 
-Useful_Census_Layers.csv
+[Useful_Census_Layers.csv](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Useful_Census_Layers.csv)
 
 A list of variables within the US tiger census that correlated interestingly with the FIA non-response data. This list also includes the short-hand lookup codes to find the variables within the census dataset.
 
-Census_FIA_joining.R
+[Census_FIA_joining.R](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Census_FIA_joining.R)
 
 This R code geospatially connects the Tiger census to the FIA plot dataset to correlate the different census variables to the FIA non-response rate. It downloads the census as well as the FIA plot data set off the internet for a specified state.
 
-Pop_dens_plotter.py
+[Pop_dens_plotter.py](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Pop_dens_plotter.py)
 
 This python code reads a file created by Census_FIA_joining.R that has columns [Number of plots, Number of non-response plots, Percent of non-response plots, Total population, Number of houses, Total area, median age, population density, latitude, longitude]. Each row of this file corresponds to a different census tract. It then creates scatter plots of these census variables vs. the percent of non-response in each census tract.
 
-gee_canopycover.R
+[gee_canopycover.R](https://github.com/maxwood1/USDA-Data-Mine/blob/main/gee_canopycover.R)
 
 This R code has two parts, the first part sets files up to put FIA plot data into Google Earth Engine. The second part takes the files created from the Google Earth Engine Analysis (done with the gee_code.txt file) and does analyses on the canopy cover data that is now connected to the FIA plot-level data.
 
-gee_code.txt
+[gee_code.txt](https://github.com/maxwood1/USDA-Data-Mine/blob/main/gee_code.txt)
 
 This is JS code that is meant to be copied into the Google Earth Engine code editor. It takes the file that was created by the first part of gee_canopycover.R and connects the FIA plot data contained within that file to the Canopy cover data in the Landsat data set within the Google Earth Engine data library. It then exports a summary file to one’s google drive account for download.
 
-gee_density_batch.R
+[gee_density_batch.R](https://github.com/maxwood1/USDA-Data-Mine/blob/main/gee_density_batch.R)
 
 This R file is a combination of the gee_canopycover.R and gee_code.txt files. It connects and analyzes FIA plot data with Landsat canopy cover data. It has also been modified to be able to perform this work over multiple states in one run.
 
-Simulate.py
+[Simulate.py](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Simulate.py)
 
 This Python file imports the canopy cover data file created by gee_code.txt to simulate FIA plot populations that follow different distributions of non-response and remote sensing. This allows us to study how these factors affect the accuracy of different methods of estimation to fill in the data missing because of non-response plots. This file runs two estimation methods, one that keeps remotely sensed plots in the estimation process and one that uses only physically visited plots in the estimation. Both methods use a perfect stratification that bins the plots according to percent of canopy cover. The threshold for this stratification is contained in a variable. This program then finds the error of each estimator, compared with the true simulated value of each population. It outputs a file containing this error data to be read and visualized by Plot.py.
 
-Plot.py
+[Plot.py](https://github.com/maxwood1/USDA-Data-Mine/blob/main/Plot.py)
 
 This python code imports the data file created by Simulate.py and creates a graphic of the data. It visually compares the accuracy of the different estimation methods as well as the different stratification thresholds. The code is separated in this way so that one does not need to run the simulation each time the plot needs to be changed (as the simulation can take up to half an hour depending on the desired data resolution).
