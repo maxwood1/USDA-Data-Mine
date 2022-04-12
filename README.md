@@ -44,7 +44,7 @@ In the context of forest inventory, stratification is a statistical method used 
 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Stratification.png"
      alt="Stratification Example"
-     width=400px
+     width=75%
      height=auto />
 
 ## Conclusion 
