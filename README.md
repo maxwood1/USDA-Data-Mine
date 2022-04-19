@@ -84,7 +84,7 @@ The analysis we performed, dealt with instances where the entire plot was labele
 
 **Corporate Partner TA:** Patrick Todjalla
 
-**DataMine Staff:** Shuennhow Chang 
+**DataMine Staff:** Shuennhau Chang 
 
 
 ## List of files in the github
