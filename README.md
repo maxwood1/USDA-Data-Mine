@@ -8,6 +8,7 @@ Michael Carlson - Ph.D. Physics Simarjot Dhaliwah - Computer Science Amanda Jaco
      title="Michael Carlson - Ph.D. Physics"
      width=200px
      height=auto />
+     <p align="center">
      <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg"
      alt="Simarjot Dhaliwah - Computer Science"
      width=200px
