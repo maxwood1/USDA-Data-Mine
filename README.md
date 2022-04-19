@@ -28,7 +28,7 @@ Vidya Vuppala - Computer Science
      width=200px
      height=auto />
 Rohan Wadhwa - Computer Science 
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Shiwei%20Jia%E2%80%8B.jpg"
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Rohan%20Wadhwa%E2%80%8B.jpg"
      alt="Rohan Wadhwa - Computer Science"
      width=200px
      height=auto />
