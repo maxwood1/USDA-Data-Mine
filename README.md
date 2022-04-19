@@ -73,7 +73,15 @@ Note that the CN column in this table is the same as PLT_CN column in previous t
 
 ## FIA Data Management
 
-Choose the EVALID you want to get the corresponding dataset. Then, filter POP_PLOT_STRATUM_ASSGN for this EVALID to get the correspondoing plots. Left join POP_PLOT_STRATUM_ASSGN with PLOT to attach variables to these plots. Finally, you are left with a file containing only the plots in the chosen EVALID and their corresponding FIA variable values.
+To get a dataset of FIA plots and variables you can follow these steps.
+
+First, choose the EVALID you want to get the corresponding dataset. 
+
+Next, filter POP_PLOT_STRATUM_ASSGN for this EVALID to get the corresponding plots. 
+
+Then, left join the POP_PLOT_STRATUM_ASSGN table with the PLOT table to attach collected FIA variables to these plots. 
+
+Finally, you are left with a file containing only the plots in the chosen EVALID and their corresponding FIA variable values.
 
 Here, a **left join** is used to combine data from two tables based on a column with matching values. For example, if you have a table with customer information and another with order information, you can join using a common column like customer id. However, this type of join only keeps rows that are present in both tables; in our case, only rows with common ids will remain. A 'left join' overcomes this by keeping all the rows in the first (left) table.
 
