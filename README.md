@@ -73,6 +73,8 @@ EVAL_DESCR - A description of the area being evaluated (often a State), the time
 
 **PLOT_POP_STRATUM_ASSGN** - list of all EVALID's and all plots 
 
+LEFT JOIN - the 'join' function is used to combine data from two tables based on a column with matching values. For example, if you have a table with customer information and another with order information, you can join using a common column like customer id. However, this type of join only keeps rows that are present in both tables; in our case, only rows with common ids will remain. A 'left join' overcomes this by keeping all the rows in the first (left) table.
+
 ## Motivation
 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png"
