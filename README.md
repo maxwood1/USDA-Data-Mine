@@ -46,7 +46,7 @@ The challenge FIA faces is that they are not able to physically visit every samp
 
 ### POP_EVAL
 
-List and description of EVALIDs 
+> List and description of EVALIDs 
 
 **EVALID** - Represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots
 
@@ -54,7 +54,7 @@ List and description of EVALIDs
 
 ### PLOT_POP_STRATUM_ASSGN
 
-List of all plots in each EVALID
+>> List of all plots in each EVALID
 
 ### PLOT
 
