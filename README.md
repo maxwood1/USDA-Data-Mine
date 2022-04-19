@@ -13,7 +13,7 @@
     <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=200></td>
   </tr>
   <tr>
-    <td>Shiwei Jia - M.S. Enviornmental and\ Ecological Engineering </td>
+    <td>Shiwei Jia - M.S. Enviornmental and <br> Ecological Engineering </td>
      <td>Vidya Vuppala - Computer Science </td>
      <td>Max Woodbury - M.S. Applied Statistics</td>
   </tr>
