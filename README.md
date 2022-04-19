@@ -47,6 +47,11 @@ In order to obtain the measurements, FIA divides their plots into various catego
 
 The challenge FIA faces is that they are not able to physically visit every sampled plot. Plots are either deemed “hazardous”, which means the land is too dangerous to go on, or they are labeled “denied-access”, meaning the landowners did not allow them on their land. Therefore, both hazardous and denied-access plots are thrown into the pool of **Non-Response Plots**. FIA is still expected to provide unbiased estimates, regardless of the missing data. During our research, we wanted to work to find the best way to incorporate non-response plots into FIA’s estimations.    
 
+## FIA Data Tables 
+
+POP_EVAL 
+
+EVALID - represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots 
   
 ## Motivation
 
