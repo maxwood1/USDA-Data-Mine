@@ -8,9 +8,9 @@
      <td>Amanda Jacobucci - Industrial Management</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg" width=auto height=480></td>
-    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg" width=auto height=480></td>
-    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=480></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg" width=auto height=200></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg" width=auto height=200></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=200></td>
   </tr>
  </table>
 Michael Carlson - Ph.D. Physics Simarjot Dhaliwah - Computer Science Amanda Jacobucci - Industrial Management 
