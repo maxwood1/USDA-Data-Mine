@@ -45,7 +45,7 @@ The challenge FIA faces is that they are not able to physically visit every samp
 
 ## FIA Data Tables 
 
-POP_EVAL 
+**POP_EVAL** 
 
 EVALID - represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots 
   
