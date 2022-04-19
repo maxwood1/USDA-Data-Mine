@@ -8,7 +8,7 @@ Michael Carlson - Ph.D. Physics
      width=200px
      height=auto />
 Simarjot Dhaliwah - Computer Science 
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg"
+<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg"
      alt="Simarjot Dhaliwah - Computer Science"
      width=200px
      height=auto />
@@ -25,9 +25,6 @@ Shiwei Joia - M.S. Enviornmental and Ecological Engineering
 Vidya Vuppala - Computer Science 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Vidya%20Vuppala.jpg"
      alt="Vidya Vuppala - Computer Science"
-     width=200px
-     height=auto /><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg"
-     alt="Michael Carlson - Ph.D. Physics"
      width=200px
      height=auto />
 Rohan Wadhwa - Computer Science 
