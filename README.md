@@ -18,7 +18,7 @@ Max Woodbury - M.S. Applied Statistics
 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Max%20Woodbury.jpg"
      alt="Max Woodbury - M.S. Applied Statistics"
-     width=400px
+     width=200px
      height=auto />
 
 ## Background
