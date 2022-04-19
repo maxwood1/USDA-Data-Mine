@@ -7,6 +7,7 @@ Michael Carlson - Ph.D. Physics
      alt="Michael Carlson - Ph.D. Physics"
      width=200px
      height=auto />
+<br clear="left"/>
 Simarjot Dhaliwah - Computer Science 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg"
      alt="Simarjot Dhaliwah - Computer Science"
