@@ -2,18 +2,16 @@
 
 ## Team Members 
 
-Michael Carlson - Ph.D. Physics 
+Michael Carlson - Ph.D. Physics Simarjot Dhaliwah - Computer Science Amanda Jacobucci - Industrial Management 
+<br clear="left"/>
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg"
      alt="Michael Carlson - Ph.D. Physics"
      width=200px
      height=auto />
-<br clear="left"/>
-Simarjot Dhaliwah - Computer Science 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg"
      alt="Simarjot Dhaliwah - Computer Science"
      width=200px
      height=auto />
-Amanda Jacobucci - Industrial Management 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg"
      alt="Amanda Jacobucci - Industrial Management"
      width=200px
