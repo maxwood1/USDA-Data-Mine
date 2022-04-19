@@ -36,9 +36,9 @@
 
 | Michael Carlson - Ph.D. Physics | Simarjot Dhaliwah - Computer Science | Amanda Jacobucci - Industrial Management |
 | :-------------: |:-------------:| :-------------:|
-| <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg" width=auto height=200> | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg" width=auto height=200> | <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg" width=auto height=200> | <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=200> |
+| Shiwei Joia - M.S. Enviornmental and Ecological Engineering  | Vidya Vuppala - Computer Science  | Max Woodbury - M.S. Applied Statistics|
+| <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Shiwei%20Jia%E2%80%8B.jpg" width=auto height=200> | <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Vidya%20Vuppala.jpg" width=auto height=200> | <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Max%20Woodbury.jpg" width=auto height=200> |
 
 ## Background
 
