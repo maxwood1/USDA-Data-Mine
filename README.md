@@ -65,12 +65,14 @@ The challenge FIA faces is that they are not able to physically visit every samp
 
 ## FIA Data Tables 
 
-**POP_EVAL** 
+**POP_EVAL** - list and description os EVALID's 
 
 EVALID - represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots
 
 EVAL_DESCR - A description of the area being evaluated (often a State), the time of evaluation, and the type of estimates that can be computed with this desciption. For example, a description might be 'MINNESOTA 2017: 2013-2017: CURRENT AREA, CURRENT VOLUME'. 
-  
+
+**PLOT_POP_STRATUM_ASSGN** - list of all EVALID's and all plots 
+
 ## Motivation
 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/FIA_plot_types.png"
