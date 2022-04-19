@@ -47,7 +47,9 @@ The challenge FIA faces is that they are not able to physically visit every samp
 
 **POP_EVAL** 
 
-EVALID - represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots 
+EVALID - represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots
+
+EVAL_DESCR - A description of the area being evaluated (often a State), the time of evaluation, and the type of estimates that can be computed with this desciption. For example, a description might be 'MINNESOTA 2017: 2013-2017: CURRENT AREA, CURRENT VOLUME'. 
   
 ## Motivation
 
