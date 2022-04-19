@@ -66,7 +66,7 @@ The challenge FIA faces is that they are not able to physically visit every samp
 
 > Note that the **CN** column in this table is the same as the **PLT_CN** column in previous table
 
-## Using Data from FIA Database
+## Getting Data from FIA Database
 
 To get a state's dataset of FIA plots and variables you can follow these steps.
 
