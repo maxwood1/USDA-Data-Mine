@@ -5,7 +5,7 @@
 Michael Carlson - Ph.D. Physics Simarjot Dhaliwah - Computer Science Amanda Jacobucci - Industrial Management 
 <br clear="left"/>
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg"
-     alt="Michael Carlson - Ph.D. Physics"
+     title="Michael Carlson - Ph.D. Physics"
      width=200px
      height=auto />
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg"
