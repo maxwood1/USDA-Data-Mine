@@ -34,26 +34,11 @@
   </tr>
  </table>
 
-Shiwei Joia - M.S. Enviornmental and Ecological Engineering 
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Shiwei%20Jia%E2%80%8B.jpg"
-     alt="Shiwei Joia - M.S. Enviornmental and Ecological Engineering"
-     width=200px
-     height=auto />
-Vidya Vuppala - Computer Science 
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Vidya%20Vuppala.jpg"
-     alt="Vidya Vuppala - Computer Science"
-     width=200px
-     height=auto />
-Rohan Wadhwa - Computer Science 
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Rohan%20Wadhwa%E2%80%8B.jpg"
-     alt="Rohan Wadhwa - Computer Science"
-     width=200px
-     height=auto />
-Max Woodbury - M.S. Applied Statistics  
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Max%20Woodbury.jpg"
-     alt="Max Woodbury - M.S. Applied Statistics"
-     width=200px
-     height=auto />
+| Michael Carlson - Ph.D. Physics | Simarjot Dhaliwah - Computer Science | Amanda Jacobucci - Industrial Management |
+| :-------------: |:-------------:| :-------------:|
+| <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg" width=auto height=200> | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 ## Background
 
