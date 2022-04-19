@@ -1,7 +1,18 @@
 # Readme/Report of the USDA FIA Purdue DataMine project of 2021-2022
 
 ## Team Members 
-
+<table>
+  <tr>
+    <td>Michael Carlson - Ph.D. Physics</td>
+     <td>Simarjot Dhaliwah - Computer Science</td>
+     <td>Amanda Jacobucci - Industrial Management</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg" width=auto height=480></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg" width=auto height=480></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=480></td>
+  </tr>
+ </table>
 Michael Carlson - Ph.D. Physics Simarjot Dhaliwah - Computer Science Amanda Jacobucci - Industrial Management 
 <p float="left">
      <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg"
