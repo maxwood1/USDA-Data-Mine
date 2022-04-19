@@ -2,17 +2,19 @@
 
 ## Team Members 
 
-Michael Carlson
+Michael Carlson - Ph.D. Physics 
 
-Simarjot Dhaliwah
+Simarjot Dhaliwah - Computer Science 
 
-Amanda Jacobucci
+Amanda Jacobucci - Industrial Management 
 
-Vidya Vuppala
+Shiwei Joia - M.S. Enviornmental and Ecological Engineering 
 
-Rohan Wadhwa
+Vidya Vuppala - Computer Science 
 
-Max Woodbury 
+Rohan Wadhwa - Computer Science 
+
+Max Woodbury - M.S. Applied Statistics  
 
 
 ## Background
