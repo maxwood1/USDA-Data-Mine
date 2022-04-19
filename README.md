@@ -1,8 +1,3 @@
----
-title: "README"
-output: html_document
----
-
 # Readme/Report of the USDA FIA Purdue DataMine project of 2021-2022
 
 ## Background
