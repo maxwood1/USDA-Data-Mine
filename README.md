@@ -12,6 +12,26 @@
     <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg" width=auto height=200></td>
     <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=200></td>
   </tr>
+  <tr>
+    <td>Shiwei Joia - M.S. Enviornmental and Ecological Engineering </td>
+     <td>Vidya Vuppala - Computer Science </td>
+     <td>Max Woodbury - M.S. Applied Statistics</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Shiwei%20Jia%E2%80%8B.jpg" width=auto height=200></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Vidya%20Vuppala.jpg" width=auto height=200></td>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Max%20Woodbury.jpg" width=auto height=200></td>
+  </tr>
+    <tr>
+    <td>Rohan Wadhwa - Computer Science</td>
+     <td></td>
+     <td></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Rohan%20Wadhwa%E2%80%8B.jpg" width=auto height=200></td>
+    <td></td>
+    <td></td>
+  </tr>
  </table>
 
 Shiwei Joia - M.S. Enviornmental and Ecological Engineering 
