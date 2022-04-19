@@ -1,6 +1,6 @@
 # Readme/Report of the USDA FIA Purdue DataMine project of 2021-2022
 
-**##Team Members **
+**##Team Members** 
 
 Michael Carlson
 
