@@ -1,5 +1,20 @@
 # Readme/Report of the USDA FIA Purdue DataMine project of 2021-2022
 
+**##Team Members **
+
+Michael Carlson
+
+Simarjot Dhaliwah
+
+Amanda Jacobucci
+
+Vidya Vuppala
+
+Rohan Wadhwa
+
+Max Woodbury 
+
+
 ## Background
 
 The USDA’s Forest Service's Forest Inventory and Analysis branch (FIA) is responsible for collecting, analyzing, and reporting information about America’s forests to allow others to make “science based decisions, backed by forest data”. Field crew workers are sent to randomly sampled plots throughout the Nation, to collect a variety of core measurements, which are used to obtain overall measurements of the Nation’s forests. 
