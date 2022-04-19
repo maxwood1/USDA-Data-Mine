@@ -13,22 +13,7 @@
     <td><img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg" width=auto height=200></td>
   </tr>
  </table>
-Michael Carlson - Ph.D. Physics Simarjot Dhaliwah - Computer Science Amanda Jacobucci - Industrial Management 
-<p float="left">
-     <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Michael%20Carlson.jpg"
-     title="Michael Carlson - Ph.D. Physics"
-     width=200px
-     height=auto />
-     <p align="center">
-     <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Simarjot%20Dhaliwal.jpg"
-     alt="Simarjot Dhaliwah - Computer Science"
-     width=200px
-     height=auto />
-</p>
-<img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Amanda%20Jacobucci.jpg"
-     alt="Amanda Jacobucci - Industrial Management"
-     width=200px
-     height=auto />
+
 Shiwei Joia - M.S. Enviornmental and Ecological Engineering 
 <img src="https://github.com/maxwood1/USDA-Data-Mine/blob/main/Images/Shiwei%20Jia%E2%80%8B.jpg"
      alt="Shiwei Joia - M.S. Enviornmental and Ecological Engineering"
