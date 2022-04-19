@@ -48,29 +48,35 @@ The challenge FIA faces is that they are not able to physically visit every samp
 
 > List and description of EVALIDs 
 
-**EVALID** - Represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots
+> **EVALID** - Represents the population used to produce a type estimate. It is composed of 6 numbers, 2 digit state code, 2 digit year code, and 2 digit evaluation type code. For example, 261600 would mean Michigan 2016 evaluation for all sampled and non sampled plots
 
-**EVAL_DESCR** - A description of the area being evaluated (often a State), the time of evaluation, and the type of estimates that can be computed with this desciption. For example, a description might be 'MINNESOTA 2017: 2013-2017: CURRENT AREA, CURRENT VOLUME'. 
+> **EVAL_DESCR** - A description of the area being evaluated (often a State), the time of evaluation, and the type of estimates that can be computed with this desciption. For example, a description might be 'MINNESOTA 2017: 2013-2017: CURRENT AREA, CURRENT VOLUME'. 
 
-### PLOT_POP_STRATUM_ASSGN
+### POP__PLOT_STRATUM_ASSGN
 
->> List of all plots in each EVALID
+> List of all plots in each EVALID
+
+> **PLT_CN** - Unique plot ID
 
 ### PLOT
 
-Includes all plot-level variables for each plot
+> Includes all plot-level variables for each plot
 
-Note that the CN column in this table is the same as PLT_CN column in previous table
+> **CN** - Unique plot ID
+
+> Note that the **CN** column in this table is the same as the **PLT_CN** column in previous table
 
 ## FIA Data Management
 
-To get a dataset of FIA plots and variables you can follow these steps.
+To get a state's dataset of FIA plots and variables you can follow these steps.
 
-First, choose the EVALID you want to get the corresponding dataset. 
+First, download the **POP_EVAL**, **POP_PLOT_STRATUM_ASSGN**, and **PLOT** tables from https://apps.fs.usda.gov/fia/datamart/CSV/datamart_csv.html for the state you choose.
 
-Next, filter POP_PLOT_STRATUM_ASSGN for this EVALID to get the corresponding plots. 
+Then, choose the EVALID you want from within that state's **POP_EVAL** table.
 
-Then, left join the POP_PLOT_STRATUM_ASSGN table with the PLOT table to attach collected FIA variables to these plots. 
+Next, filter the **POP_PLOT_STRATUM_ASSGN** table for this EVALID to get the corresponding plots. 
+
+Then, left join the **POP_PLOT_STRATUM_ASSGN** table with the **PLOT** table to attach FIA variables to these plots. 
 
 Finally, you are left with a file containing only the plots in the chosen EVALID and their corresponding FIA variable values.
 
